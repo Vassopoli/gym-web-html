@@ -17,6 +17,11 @@ function loadExercise() {
         document.getElementById('exerciseDetails').innerHTML = document.getElementById('exerciseDetails').innerHTML
         + " with " + exerciseReal.workoutExercises[0].loadValue
     }
+
+    if (exerciseReal.workoutExercises[0].advancedTechnique.name != null) {
+        document.getElementById('exerciseDetails').innerHTML = document.getElementById('exerciseDetails').innerHTML
+        + "<br>" + exerciseReal.workoutExercises[0].advancedTechnique.name
+    }
 }
 
 window.onload = function() {
