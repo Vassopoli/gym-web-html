@@ -10,6 +10,13 @@ function loadExercise() {
     }
 
     document.getElementById('videoTutorial').src = "https://www.youtube.com/embed/" + exerciseReal.idYoutubeVideo;
+
+    document.getElementById('exerciseDetails').innerHTML = exerciseReal.workoutExercises[0].sets + "x" + exerciseReal.workoutExercises[0].repetitions;
+
+    if (exerciseReal.workoutExercises[0].loadValue != null) {
+        document.getElementById('exerciseDetails').innerHTML = document.getElementById('exerciseDetails').innerHTML
+        + " with " + exerciseReal.workoutExercises[0].loadValue
+    }
 }
 
 window.onload = function() {
