@@ -68,6 +68,10 @@ div {
     margin: 0px;
 }
 
+.highlight {
+    font-weight: bold;
+}
+
 .inline {
     margin: 0px;
     display: inline-block;
