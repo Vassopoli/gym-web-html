@@ -1,4 +1,4 @@
-const baseurl = "http://localhost:8080/workout";
+const baseurl = "http://localhost:8080/workouts";
 
 function exerciseDetails(id) {
     localStorage.setItem("currentExerciseId", id);
