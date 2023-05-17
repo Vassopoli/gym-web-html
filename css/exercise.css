@@ -1,22 +1,39 @@
 html {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #ffffff;
+    background-color: #000000;
 
 }
 
-body {  
+.background-image {
     background-color: rgb(65, 65, 65);
+    background-blend-mode: multiply;
     background-image: url(../assets/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
     background-blend-mode: multiply;
-    height: 1000px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
     width: 100%;
+    height: 1000px;
+    position: absolute;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
 }
 
-h1 {
-    background-color: #000000;
+.content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 h2 {
