@@ -11,7 +11,14 @@ function loadExercise() {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200){
             var workout = JSON.parse(xmlhttp.responseText);
+
+            var head = "<div id= " + workout.id + '>' + '<h3>' + workout.date 
+                + "</h3>" + '<p>Letter: ' + workout.letter + "</p>" + '<p>Type: ' 
+                + workout.workoutType.name + "</p>" + '<p>Aerobic time: ' 
+                + workout.aerobicTimeInMinutes + 'min.' + "</p>";
+
             var main = "";
+
             for (i = 0; i < workout.exercises.length; i++) {
                 var exercise = workout.exercises[i]
                 localStorage.setItem(exercise.id, JSON.stringify(exercise))
@@ -25,7 +32,9 @@ function loadExercise() {
                 main += "</div>";
             }
             
-            document.getElementById("listaExercicios").innerHTML = main;
+            document.getElementById("dayInfo").innerHTML = head;
+
+            document.getElementById("listExercises").innerHTML = main;
 
             document.querySelectorAll('.exercise').forEach(item => {
                 item.addEventListener('click', event => {
