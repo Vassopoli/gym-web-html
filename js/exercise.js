@@ -4,6 +4,12 @@ function loadExercise() {
     var exerciseReal = JSON.parse(localStorage.getItem(exerciseId));
 
     document.getElementById("exerciseName").innerHTML = exerciseReal.primaryName;
+    
+    var executed = "";
+
+    if (exerciseReal.workoutExercises[0].executed == true) {
+        document.getElementById("executed").innerHTML = "EXECUTED";
+    }; 
 
     if (exerciseReal.workoutExercises.length > 1) {
         document.getElementById("lastTime").innerHTML = exerciseReal.workoutExercises[1].sets + "x" 
