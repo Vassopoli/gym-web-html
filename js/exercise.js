@@ -12,6 +12,7 @@ function loadExercise() {
     document.getElementById('videoTutorial').src = "https://www.youtube.com/embed/" + exerciseReal.idYoutubeVideo;
     document.getElementById('muscleName').innerHTML = exerciseReal.muscle.name;
     document.getElementById('exerciseDetails').innerHTML = exerciseReal.workoutExercises[0].sets + "x" + exerciseReal.workoutExercises[0].repetitions;
+    document.getElementById('rest').innerHTML = "Rest: " + exerciseReal.workoutExercises[0].restSeconds + "sec";
 
     if (exerciseReal.workoutExercises[0].loadValue != null) {
         document.getElementById('exerciseDetails').innerHTML = document.getElementById('exerciseDetails').innerHTML
