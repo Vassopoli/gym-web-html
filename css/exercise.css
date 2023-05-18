@@ -63,9 +63,10 @@ div {
   
 }
 
-.log {
+.twoColumns {
     text-align: justify;
     margin: 0px;
+    display: inline-block;
 }
 
 .highlight {
