@@ -5,9 +5,7 @@ function loadExercise() {
 
     document.getElementById("exerciseName").innerHTML = exerciseReal.primaryName;
     
-    var executed = "";
-
-    if (exerciseReal.workoutExercises[0].executed == true) {
+    if (exerciseReal.workoutExercises[0].executed) {
         document.getElementById("executed").innerHTML = "EXECUTED";
     }; 
 
