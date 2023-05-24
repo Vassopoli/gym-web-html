@@ -7,7 +7,11 @@ function loadExercise() {
     
     if (exerciseReal.workoutExercises[0].executed) {
         document.getElementById("executed").innerHTML = "EXECUTED";
-    }; 
+        document.getElementById("executed").classList.add("alert-box", "success");
+    } else {
+        document.getElementById("executed").innerHTML = "NOT EXECUTED";
+        document.getElementById("executed").classList.add("alert-box", "warning");
+    }
 
     if (exerciseReal.workoutExercises.length > 1) {
         document.getElementById("lastTime").innerHTML = exerciseReal.workoutExercises[1].sets + "x" 

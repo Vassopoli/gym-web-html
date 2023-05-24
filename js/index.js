@@ -26,7 +26,7 @@ function loadExercise() {
                     + exercise.primaryName + "<p class='rep'>" + exercise.workoutExercises[0].sets 
                     + "x" +  exercise.workoutExercises[0].repetitions;
                 if (exercise.workoutExercises[0].executed == true) {
-                    main += "<p class='success'>EXECUTED</p>"
+                    main += "<p class='alert-box success'>EXECUTED</p>"
                 };                    
 
                 main += "</div>";
