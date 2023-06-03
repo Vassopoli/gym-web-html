@@ -1,3 +1,4 @@
+const baseurl = "http://vassopoli-pc:8080/workouts";
 
 function resetApplicationState() {
     localStorage.clear(); //Reseting state
