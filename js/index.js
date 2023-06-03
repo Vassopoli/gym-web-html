@@ -1,4 +1,7 @@
-const baseurl = "http://localhost:8080/workouts";
+
+function resetApplicationState() {
+    localStorage.clear(); //Reseting state
+}
 
 function exerciseDetails(id) {
     localStorage.setItem("currentExerciseId", id);
@@ -45,7 +48,8 @@ function loadExercise() {
     }
     xmlhttp.send();
 }
-window.onload = function() {
 
+window.onload = function() {
+    resetApplicationState();
     loadExercise();
 }
