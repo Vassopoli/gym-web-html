@@ -7,7 +7,11 @@ function loadExercise() {
     
     if (exerciseReal.workoutExercises[0].executed) {
         document.getElementById("executed").innerHTML = "EXECUTED";
-    }; 
+        document.getElementById("executed").classList.add("alert-box", "success");
+    } else {
+        document.getElementById("executed").innerHTML = "NOT EXECUTED";
+        document.getElementById("executed").classList.add("alert-box", "warning");
+    }
 
     if (exerciseReal.workoutExercises.length > 1) {
         document.getElementById("lastTime").innerHTML = exerciseReal.workoutExercises[1].sets + "x" 
@@ -17,18 +21,10 @@ function loadExercise() {
  
     document.getElementById('videoTutorial').src = "https://www.youtube.com/embed/" + exerciseReal.idYoutubeVideo;
     document.getElementById('muscleName').innerHTML = exerciseReal.muscle.name;
-    document.getElementById('exerciseDetails').innerHTML = exerciseReal.workoutExercises[0].sets + "x" + exerciseReal.workoutExercises[0].repetitions;
+    document.getElementById('seriesAndRepetitions').innerHTML = exerciseReal.workoutExercises[0].sets + "x" + exerciseReal.workoutExercises[0].repetitions;
+    document.getElementById('load').innerHTML = exerciseReal.workoutExercises[0].loadValue != null ? exerciseReal.workoutExercises[0].loadValue + " " + exerciseReal.workoutExercises[0].loadType.name : "";
+    document.getElementById('advancedTechnique').innerHTML = exerciseReal.workoutExercises[0].advancedTechnique.name != null ? exerciseReal.workoutExercises[0].advancedTechnique.name : "";
     document.getElementById('rest').innerHTML = exerciseReal.workoutExercises[0].restSeconds + "sec";
-
-    if (exerciseReal.workoutExercises[0].loadValue != null) {
-        document.getElementById('exerciseDetails').innerHTML = document.getElementById('exerciseDetails').innerHTML
-        + " with " + exerciseReal.workoutExercises[0].loadValue + " " + exerciseReal.workoutExercises[0].loadType.name;
-    }
-
-    if (exerciseReal.workoutExercises[0].advancedTechnique.name != null) {
-        document.getElementById('exerciseDetails').innerHTML = document.getElementById('exerciseDetails').innerHTML
-        + "<br>" + exerciseReal.workoutExercises[0].advancedTechnique.name;
-    }
 }
 
 window.onload = function() {

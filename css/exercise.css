@@ -39,18 +39,27 @@ html {
 #exerciseName {
     margin-bottom: 0px;
 }
-.success {
-    color: #ffffff;
+
+.alert-box {
     font-weight: bold;
     font-size: 10px;
     margin-top: 0px;
     margin-bottom: 15px;
-    background-color: #008500;
+    width: 90px;
+    height: 15px;
     border-radius: 10px;
     padding: 0;
-    width: 60px;
-    height: 15px;
     text-align: center;
+}
+
+.success {
+    color: #ffffff;
+    background-color: #008500;
+}
+
+.warning {
+    color: #ffffff;
+    background-color: #ffc107;
 }
 
 h2 {
