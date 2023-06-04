@@ -29,9 +29,14 @@ function loadExercise() {
                 main += "<div id= "+ exercise.id +" class='exercise'>"
                     + exercise.primaryName + "<p class='rep'>" + exercise.workoutExercises[0].sets 
                     + "x" +  exercise.workoutExercises[0].repetitions;
-                if (exercise.workoutExercises[0].executed == true) {
-                    main += "<p class='alert-box success'>EXECUTED</p>"
-                };                    
+                // Verify if there is a advanced technique in the exercise, then show which is.
+                if (exercise.workoutExercises[0].advancedTechnique.name != "") {
+                    main += "<p class='advancedTechnique'>" + exercise.workoutExercises[0].advancedTechnique.name + "</p>" 
+                };  
+                  
+                if (exercise.workoutExercises[0].executed) {
+                    main += "<p class='success'>EXECUTED</p>"
+                };  
 
                 main += "</div>";
             }
