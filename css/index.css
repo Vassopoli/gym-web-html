@@ -81,6 +81,15 @@ p {
 .success {
     color: #ffffff;
     background-color: #008500;
+    border-radius: 10px;
+    width: fit-content;
+    height: 15px;
+    padding: 2px 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .warning {

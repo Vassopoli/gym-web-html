@@ -28,8 +28,9 @@ function loadExercise() {
                 // Verify if there is a advanced technique in the exercise, then show which is.
                 if (exercise.workoutExercises[0].advancedTechnique.name != "") {
                     main += "<p class='advancedTechnique'>" + exercise.workoutExercises[0].advancedTechnique.name + "</p>" 
-                };    
-                    if (exercise.workoutExercises[0].executed == true) {
+                };  
+                  
+                if (exercise.workoutExercises[0].executed) {
                     main += "<p class='success'>EXECUTED</p>"
                 };  
 
