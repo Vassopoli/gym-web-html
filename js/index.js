@@ -9,9 +9,13 @@ function exerciseDetails(id) {
     window.location.href = "/exercise.html";
 }
 
-function loadExercise() {
+function loadExercise(currentDate) {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", baseurl, true);
+
+    param = "?date=" + currentDate
+    finalUrl = baseurl + param
+
+    xmlhttp.open("GET", finalUrl, true);
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200){
             var workout = JSON.parse(xmlhttp.responseText);
@@ -55,7 +59,30 @@ function loadExercise() {
     xmlhttp.send();
 }
 
-window.onload = function() {
+function getCurrentDate() {
+    const date = new Date();
+
+    let currentDay = String(date.getDate()).padStart(2, '0');
+
+    let currentMonth = String(date.getMonth()+1).padStart(2,"0");
+
+    let currentYear = date.getFullYear();
+
+    let currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
+    return currentDate;
+}
+
+function getWorkoutByDate(e) {
+    let workoutDate = document.getElementById("workout_date").value
+
     resetApplicationState();
-    loadExercise();
+    loadExercise(workoutDate);
+}
+
+window.onload = function() {
+    let workoutDate = getCurrentDate();
+    document.getElementById("workout_date").value = workoutDate;
+
+    resetApplicationState();
+    loadExercise(workoutDate);
 }
