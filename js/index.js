@@ -1,7 +1,9 @@
 const baseurl = "http://vassopoli-pc:8080/workouts";
 
 function resetApplicationState() {
-    localStorage.clear(); //Reseting state
+    //I cant clear some states, like:
+    // - workout date (will clear after session ends, so it's on sessionStorage)
+    localStorage.clear(); //Reseting state...     
 }
 
 function exerciseDetails(id) {
@@ -74,14 +76,25 @@ function getCurrentDate() {
 
 function getWorkoutByDate(e) {
     let workoutDate = document.getElementById("workout_date").value
+    sessionStorage.setItem("workoutDate", workoutDate);
 
     resetApplicationState();
     loadExercise(workoutDate);
 }
 
 window.onload = function() {
-    let workoutDate = getCurrentDate();
+    let workoutDateFromSession = sessionStorage.getItem("workoutDate");
+
+    let workoutDate;
+    
+    if (workoutDateFromSession) {
+        workoutDate = workoutDateFromSession;
+    } else {
+        workoutDate = getCurrentDate();
+    }
+
     document.getElementById("workout_date").value = workoutDate;
+    sessionStorage.setItem("workoutDate", workoutDate);
 
     resetApplicationState();
     loadExercise(workoutDate);
